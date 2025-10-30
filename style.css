@@ -4,7 +4,12 @@
   font-display: swap;
 }
 
-:root, html, body {
+:root {
+  --button-max-width: 960px;
+  --button-min-width: 240px;
+}
+
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -13,6 +18,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 *, *::before, *::after {
@@ -25,17 +35,18 @@
   height: 100%;
   max-width: 100%;
   max-height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(6px, 2vw, 20px);
+  display: grid;
+  place-items: center;
+  padding: clamp(6px, 2vmin, 24px);
 }
 
 button#order-btn {
   position: relative;
   aspect-ratio: 352 / 128; /* maintains proportions of source image */
-  width: min(100%, clamp(280px, 60vw, 520px));
-  max-width: clamp(280px, 60vw, 520px);
+  width: min(100%, var(--button-max-width));
+  max-width: min(100%, var(--button-max-width));
+  min-width: min(100%, var(--button-min-width));
+  max-height: 100%;
   border: none;
   background: url('assets/button.png') no-repeat center/contain;
   background-color: transparent;
@@ -44,7 +55,7 @@ button#order-btn {
   align-items: center;
   justify-content: center;
   font-family: 'SuperTrend', sans-serif;
-  font-size: clamp(0.6rem, 1.2vw + 0.35rem, 1.2rem);
+  font-size: clamp(0.7rem, 3.5vw, 1.6rem);
   line-height: 1.25;
   color: #8f5c2f;
   text-shadow: 0 1px 3px rgba(255, 232, 204, 0.45);
