@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'SuperTrend';
+  src: url('fonts/Super-Trend.ttf') format('truetype');
+  font-display: swap;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: transparent; /* no white, no black */
+}
+
+button#order-btn {
+  background: url('assets/button.png') no-repeat center/contain;
+  border: none;
+  width: 280px; /* adjust if needed */
+  height: 100px; /* match your button image proportions */
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'SuperTrend', sans-serif;
+  font-size: 1.6rem;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 14px rgba(255, 192, 250, 0.9);
+  letter-spacing: 1px;
+  background-color: transparent;
+  outline: none;
+  transition: transform 0.15s ease, filter 0.3s ease;
+}
+
+button#order-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+button#order-btn:active {
+  transform: scale(0.97);
+  filter: brightness(0.9);
+}
+
+button#order-btn span {
+  position: relative;
+  z-index: 2;
+}
+
+button#order-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+button#order-btn:hover::after {
+  opacity: 1;
+}
