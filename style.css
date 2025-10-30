@@ -25,6 +25,10 @@ html, body {
   box-sizing: border-box;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* Wrapper centers the button */
 .button-wrapper {
   width: 100%;
